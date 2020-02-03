@@ -1,0 +1,4 @@
+/* Jest can't import CSS, it needs to be mocked */
+.to-be-imported {
+  background: dardslateblue;
+}
