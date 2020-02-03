@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import InlineSnapshotComponent from "../inlineSnapshot";
+import InlineSnapshotComponent from "../InlineSnapshot";
 
 test("renders with an inline snapshot", () => {
   const { container } = render(<InlineSnapshotComponent />);
