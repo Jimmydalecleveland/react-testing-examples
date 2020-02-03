@@ -6,5 +6,6 @@ module.exports = {
   },
   // used for CSS-in-JS to render css rather than hashed className
   // that invalidates a snapshot each time css is changed
+  setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
   snapshotSerializers: ['jest-emotion']
 }
