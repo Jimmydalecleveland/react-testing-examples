@@ -1,7 +1,8 @@
 import axios from 'axios'
 
-const swapiGetter = () => axios
-    .get("https://swapi.dev/api/people/1/")
-    .then(res => res.data)
+// Get a star wars person by id and return their name
+const swapiGetter = (id) => axios
+    .get(`https://swapi.dev/api/people/${id}/`)
+    .then(res => res.data.name)
 
 export default swapiGetter
