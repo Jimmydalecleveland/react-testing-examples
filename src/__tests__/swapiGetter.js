@@ -5,6 +5,8 @@ jest.mock('axios')
 mockAxios.get.mockResolvedValue({ data: { name: 'Jimmy Jedi' } })
 
 describe('swapiGetter', () => {
+  afterEach(jest.clearAllMocks)
+
   test('should return the first entry from the api', async () => {
     const result = await swapiGetter(1)
     expect(result).toBe('Jimmy Jedi')
