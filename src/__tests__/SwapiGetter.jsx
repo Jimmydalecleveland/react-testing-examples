@@ -8,13 +8,16 @@ mockAxios.get.mockResolvedValue({ data: { name: 'Jimmy Jedi' } })
 import SwapiGetter from '../SwapiGetter'
 
 describe('SwapiGetter', () => {
-  test.skip('should render loading while waiting for api call', async () => {
-    const { getByText } = render(<SwapiGetter></SwapiGetter>)
-
-    getByText(/loading/i)
+  // this is for future tests using our mocks
+  beforeEach(() => {
+    jest.clearAllMocks()
   })
+
   test('should render with fetched data', async () => {
     const { getByText } = render(<SwapiGetter></SwapiGetter>)
+
+    // shows loading while waiting for fetch
+    getByText(/loading/i)
 
     await wait(() => expect(getByText('Jimmy Jedi')))
     expect(mockAxios.get).toHaveBeenCalledTimes(1)
